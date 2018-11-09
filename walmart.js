@@ -1,7 +1,7 @@
 $("#submit").on("click", function() {
 
 
-var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag&query=" + searchQuery + "";
+var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag&query=" + searchQuery + "&numItems=10";
 var searchQuery = $("#search").val();
 
 $.ajax({
@@ -9,16 +9,27 @@ $.ajax({
     method: "get",
 }).then(function(responce) {
 
-    for (var i = 0; i < responce.length; i++){
+    var Items = responce.items;
 
-        var thumbnailUrl = responce[i].thumbnailImage;
+    for (var i = 0; i < Items.length; i++){
 
-        var productName = responce[i].name;
+        var thumbnailUrl = Items[i].thumbnailImage;
 
-        var price = responce[i].salesPrice;
+        var productName = Items[i].name;
 
-        
+        var price = Items[i].salesPrice;
 
+        var product = $("<div>");
+
+        var img = $("<img>").attr("src", thumbnailUrl);
+
+        var name = $("<h4>").attr("val", productName);
+
+        var pricetag = $("<p>").attr("val", price);
+
+        product.append(img);
+        product.append(name);
+        product.append(pricetag);
 
 
     }
