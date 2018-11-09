@@ -1,13 +1,15 @@
 $("#submit").on("click", function() {
 
 
-var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag&query=" + searchQuery + "&numItems=10";
+var queryURL = "https://api.walmartlabs.com/v1/search?apiKey="+ apiKey + "&query=" + searchQuery + "&numItems=10";
 var searchQuery = $("#search").val();
+var apiKey;
 
 $.ajax({
     url: queryURL,
     method: "get",
 }).then(function(responce) {
+    console.log(responce);
 
     var Items = responce.items;
 
