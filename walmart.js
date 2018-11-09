@@ -21,11 +21,13 @@ $.ajax({
 
         var price = Items[i].salesPrice;
 
-        var product = $("<div>");
+        var cardNum = i + 1;
+
+        var product = $("#card" + cardNum);
 
         var img = $("<img>").attr("src", thumbnailUrl);
 
-        var name = $("<h4>").attr("val", productName);
+        var name = $("<h5>").attr("val", productName);
 
         var pricetag = $("<p>").attr("val", price);
 
