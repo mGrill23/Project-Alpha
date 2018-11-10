@@ -2,7 +2,7 @@ var $search = $("#search");
 $("#submit").on("click", function() {
 
 
-    var queryURL = "https://open.api.ebay.com/shopping?&callname=FindProductss&responseencoding=JSON&appid="+ apiKey + "&QueryKeywords=" + searchQuery + "&AvailableItemsOnly=true&MaxEntries=10";
+    var queryURL = "https://open.api.ebay.com/shopping?&callname=FindItemss&version=515&responseencoding=JSON&appid="+ apiKey + "&QueryKeywords=" + searchQuery + "&AvailableItemsOnly=true&MaxEntries=10";
     var searchQuery = $("#search").val().trim();
     var apiKey = "michaelg-s-SBX-cc22b8256-7a0ebdfb";
     
