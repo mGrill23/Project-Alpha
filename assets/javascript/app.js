@@ -1,16 +1,20 @@
-var $search = $("#search");
-$("#submit").on("click", function() {
+ 
 
-
-    var queryURL = "https://open.api.ebay.com/shopping?&callname=FindProductss&version=1063&responseencoding=JSON&appid="+ apiKey + "&QueryKeywords=" + searchQuery + "&AvailableItemsOnly=true&MaxEntries=10";
-    var searchQuery = $("#search").val().trim();
-    var apiKey = "michaelg-s-PRD-0c272c1de-fe286388";
+    
+ 
+$("#searchbtn").on("click", function() {
+    console.log(" I AM HERE");
+     var apiKey = "michaelg-s-PRD-0c272c1de-fe286388";
+     var searchQuery = $("#searchform").val().trim();
+     var queryURL = "https://open.api.ebay.com/shopping?&callname=FindProductss&responseencoding=JSON&appid="+ apiKey + "&QueryKeywords=" + searchQuery + "&AvailableItemsOnly=true&MaxEntries=10&version=1063";
+    
+    console.log(queryURL);
     
     
     
     $.ajax({
         url: queryURL,
-        method: "get",
+        method: "GET",
     }).then(function(responce) {
         console.log(responce);
     
@@ -42,6 +46,7 @@ $("#submit").on("click", function() {
         // }
     
     });
+
     
     
     
