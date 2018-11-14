@@ -5,7 +5,7 @@
 $("#searchbtn").on("click", function() {
     console.log(" I AM HERE");
      var searchQuery = $("#searchform").val().trim();
-     var queryUrl = "http://open.api.ebay.com/shopping?version=1067&appid=michaelg-s-PRD-0c272c1de-fe286388&callname=FindProducts&QueryKeywords=" + searchQuery + "&MaxEntries=10$responseencoding=JSON";
+     var queryUrl = "https://cors-anywhere.herokuapp.com/http://open.api.ebay.com/shopping?version=1067&appid=michaelg-s-PRD-0c272c1de-fe286388&callname=FindProducts&QueryKeywords=" + searchQuery + "&MaxEntries=10$responseencoding=JSON";
     
     console.log(queryUrl);
     
