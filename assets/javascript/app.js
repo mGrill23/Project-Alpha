@@ -4,46 +4,29 @@
  
 $("#searchbtn").on("click", function() {
     console.log(" I AM HERE");
-     var apiKey = "michaelg-s-PRD-0c272c1de-fe286388";
      var searchQuery = $("#searchform").val().trim();
-     var queryURL = "https://open.api.ebay.com/shopping?&callname=FindProductss&responseencoding=JSON&appid="+ apiKey + "&QueryKeywords=" + searchQuery + "&AvailableItemsOnly=true&MaxEntries=10&version=1063";
+     var queryUrl = "http://open.api.ebay.com/shopping?version=1067&appid=michaelg-s-PRD-0c272c1de-fe286388&callname=FindProducts&QueryKeywords=" + searchQuery + "&MaxEntries=10$responseencoding=JSON";
     
-    console.log(queryURL);
+    console.log(queryUrl);
     
     
     
     $.ajax({
-        url: queryURL,
+        url: queryUrl,
         method: "GET",
-    }).then(function(responce) {
-        console.log(responce);
+    }).then(function(response) {
+        var ebayObj = JSON.parse(response);
+        
+       for (var i = 0; i < 10; i++)  {
+           var link = ebayObj.Products[i].DetaildURL;
+           console.log(link);
+           var imgURL = ebayObj.Products[i].StockPhotoURL;
+           console.log(imgURL);
+           var title = ebayObj.Products[i].Title;
+           console.log(title);
+       }
     
-        // var Items = responce.items;
-    
-        // for (var i = 0; i < Items.length; i++){
-    
-        //     var thumbnailUrl = Items[i].thumbnailImage;
-    
-        //     var productName = Items[i].name;
-    
-        //     var price = Items[i].salesPrice;
-    
-        //     var cardNum = i + 1;
-    
-        //     var product = $("#card" + cardNum);
-    
-        //     var img = $("<img>").attr("src", thumbnailUrl);
-    
-        //     var name = $("<h5>").attr("val", productName);
-    
-        //     var pricetag = $("<p>").attr("val", price);
-    
-        //     product.append(img);
-        //     product.append(name);
-        //     product.append(pricetag);
-    
-    
-        // }
+        
     
     });
 
