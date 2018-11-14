@@ -1,5 +1,6 @@
- 
 
+ 
+var $search = $("#search");
     
  
 $("#searchbtn").on("click", function() {
