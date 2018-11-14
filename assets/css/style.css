@@ -1,3 +1,7 @@
+body {
+    font-family: 'Bangers', cursive;
+}
+
 .container-fluid {
     border:1px solid black;
     text-align:center;
@@ -6,6 +10,14 @@
 .jumbotron {
     border: 1px solid black;
     margin:20px;
+    text-align:center;
+    font-size:66px;
+    background-image:url(../images/marvel.jpg);
+    color:white;
+    font-weight: bold;
+    color:white;
+    padding-top:175px;
+
 
 }
 
@@ -16,9 +28,115 @@
 }
 
 .navbar-brand {
-    font-size: 40px;
+    font-size: 32px;
 }
 
 .dropdown {
-    margin-left:20px;
+    margin-left:40px;
+
+}
+
+.nav-link {
+    font-size: 24px;
+    display:inline;
+    margin:10px;
+    padding:10px;
+    
+   
+
+}
+
+.nav-link:hover {
+    background-color:red;
+    font-weight: bold;
+    padding:10px;
+
+    
+
+}
+
+.nav-link .active {
+    background-color:red;
+    
+}
+
+.active {
+    font-weight: bold;
+    background-color:red;
+    
+   
+}
+
+
+.col-lg-5 {
+    text-align:center;
+    font-size:40px;
+    height:200px;
+    border:1px solid black;
+    margin:20px;
+    padding-top:70px;
+    color:white;
+    opacity:0.6;
+    
+
+}
+
+.col-lg-5:hover {
+    opacity:1.0;
+    font-size:58px;
+    cursor:pointer;
+    box-shadow: 18px 18px 18px rgba(0, 0, 0, 0.5);
+    color:red;
+    font-weight:bold;
+
+
+
+}
+
+#black-panther {
+    background-image:url(../images/black-panther.jpg);
+}
+
+#captain-america {
+    background-image: url(../images/captain-america.jpg)
+}
+
+#deadpool {
+    background-image: url(../images/deadpool.webp)
+}
+
+#hulk {
+    background-image:url(../images/hulk2.jpg)
+}
+
+#iron-man {
+    background-image:url(../images/iron-man3.jpg)
+}
+
+#spiderman {
+    background-image:url(../images/spiderman.jpg)
+}
+
+#thanos {
+    background-image:url(../images/thanos.jpg)
+}
+
+#thor {
+    background-image: url(../images/thor2.jpg)
+}
+
+#venom {
+    background-image: url(../images/venom.jpg)
+}
+
+#wolverine {
+    background-image:url(../images/wolverine2.jpg)
+}
+
+.dropdown-menu {
+    visibility: hidden;
+}
+
+.btn {
+    margin-left:5px;
 }
