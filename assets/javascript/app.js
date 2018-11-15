@@ -3,9 +3,9 @@
 var $search = $("#search");
     
  
-$("#searchbtn").on("click", function() {
+$("#searchBtn").on("click", function() {
     console.log(" I AM HERE");
-     var searchQuery = $("#searchform").val().trim();
+     var searchQuery = $("#searchName").val().trim();
      var queryUrl = "https://cors-anywhere.herokuapp.com/http://open.api.ebay.com/shopping?version=1067&appid=michaelg-s-PRD-0c272c1de-fe286388&callname=FindProducts&QueryKeywords=" + searchQuery + "&MaxEntries=10$responseencoding=JSON";
     
     console.log(queryUrl);
@@ -25,6 +25,19 @@ $("#searchbtn").on("click", function() {
            console.log(imgURL);
            var title = ebayObj.Products[i].Title;
            console.log(title);
+
+           var div = $("<div>");
+           var p = $("<p>");
+           var h6 = $("<h6>");
+           var img = $("<img>");
+
+           
+           p.attr("text", link);
+           h6.attr("text", title);
+           img.attr("src", imgUrl);
+           div.append(img);
+           div.append(h6);
+           div.append(p);
        }
     
         
