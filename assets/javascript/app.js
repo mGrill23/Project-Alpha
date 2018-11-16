@@ -1,4 +1,5 @@
 
+
  
 $("#searchEbayBtn").on("click", function() {
     console.log("hellow Ebay");
@@ -71,6 +72,7 @@ console.log(response);
     		obj = xml.nodeValue;
     	}
     
+
     	// do children
     	if (xml.hasChildNodes()) {
     		for(var i = 0; i < xml.childNodes.length; i++) {
