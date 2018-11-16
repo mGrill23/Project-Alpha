@@ -1,4 +1,5 @@
 
+
  
 $("#searchEbayBtn").on("click", function() {
     console.log("hellow Ebay");
@@ -71,22 +72,23 @@ console.log(response);
     		obj = xml.nodeValue;
     	}
     
-    	// do children
-    	if (xml.hasChildNodes()) {
-    		for(var i = 0; i < xml.childNodes.length; i++) {
-    			var item = xml.childNodes.item(i);
-    			var nodeName = item.nodeName;
-    			if (typeof(obj[nodeName]) == "undefined") {
-    				obj[nodeName] = xmlToJson(item);
-    			} else {
-    				if (typeof(obj[nodeName].push) == "undefined") {
-    					var old = obj[nodeName];
-    					obj[nodeName] = [];
-    					obj[nodeName].push(old);
-    				}
-    				obj[nodeName].push(xmlToJson(item));
-    			}
-    		}
-    	}
-    	return obj;
-    };    
+    // 	// do children
+    // 	if (xml.hasChildNodes()) {
+    // 		for(var i = 0; i < xml.childNodes.length; i++) {
+    // 			var item = xml.childNodes.item(i);
+    // 			var nodeName = item.nodeName;
+    // 			if (typeof(obj[nodeName]) == "undefined") {
+    // 				obj[nodeName] = xmlToJson(item);
+    // 			} else {
+    // 				if (typeof(obj[nodeName].push) == "undefined") {
+    // 					var old = obj[nodeName];
+    // 					obj[nodeName] = [];
+    // 					obj[nodeName].push(old);
+    // 				}
+    // 				obj[nodeName].push(xmlToJson(item));
+    // 			}
+    // 		}
+    // 	}
+    // 	return obj;
+    // };    
+    }

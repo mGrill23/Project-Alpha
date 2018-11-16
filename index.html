@@ -15,17 +15,21 @@
 </head>
 <body>
 
+  
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:black">
+        <a class="navbar-brand" href="index.html">Comic Book Swag</a>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Comic Book Swag</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     
 
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" id="searchName" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchBtn">Search</button>
+
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchName">
+            <button class="btn btn-success my-2 my-sm-0" type="button" id="searchBtn">Search</button>
+
+
         </form>
 
         <div class="dropdown">
@@ -36,14 +40,55 @@
             </div> -->
             <select id="menuOptions">
 
-                
+
+       
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button<a class="dropdown-item" href="#">Action</a> 
+            </button>
+
+            <select id="menuOptions">
+
+
             </select>
-            <button id="searchEbayBtn" type="button" class="btn btn-success">Search Ebay</button>
-          </div>
+            <button onclick="javascript:showDiv();" class="btn btn-success my-2 my-sm-0" type="button" id="searchEbayBtn">Go!</button>
+        </div>
+
 
     </nav>
+
+
+    <div class="container" id="results">
+
+        <div class="card-deck">
+            <div class="card">
+
+            </div>
+
+            <div class="card">
+
+            </div>
+
+            <div class="card">
+
+            </div>
+
+            <div class="card">
+
+            </div>
+        </div>
+
+
+        
+
+    <!--<div id="one">
+        <div id="results">
+            
+        </div>
+        <button onclick="javascript:showDiv();">Click to show div</button>
+    </div>-->
               
-    <div class="jumbotron">
+    <!--<div class="jumbotron">
         Comic Book Swag
     </div>
 
@@ -72,7 +117,7 @@
             <div class="col-lg-5" id="venom">Venom</div>
             <div class="col-lg-5" id="wolverine">Wolverine</div>
         </div>
-    </div>
+    </div>-->
 
     <script src="assets/javascript/app.js"></script>
     <script src="assets/javascript/javascript.js"></script>
