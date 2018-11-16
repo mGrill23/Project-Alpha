@@ -6,7 +6,7 @@ $("#searchEbayBtn").on("click", function() {
      var searchQuery = encodeURIComponent($("#menuOptions option:selected").val());
 
     console.log("searchQuery=" + searchQuery);
-    debugger
+    
      var queryUrl = "https://cors-anywhere.herokuapp.com/http://open.api.ebay.com/shopping?version=1067&appid=michaelg-s-PRD-0c272c1de-fe286388&callname=FindProducts&QueryKeywords=" + searchQuery + "&MaxEntries=10&responseencoding=JSON";
     
     console.log(queryUrl);
@@ -23,24 +23,21 @@ console.log(response);
        for (var i = 0; i < response.Product.length; i++)  {
            var link = response.Product[i].DetailsURL;
            console.log(link);
-        //    var imgURL = response.Products[i].DisplayStockPhotosURL;
-        //    console.log(imgURL);
            var title = response.Product[i].Title;
            console.log(title);
             var mainCharacter = response.Product[i].ItemSpecifics.NameValueList[1].Value[0];
             console.log("mainCharacter=" + mainCharacter);
 
-            var div = $("<div>");
-           var p = $("<p>");
-           var h6 = $("<h6>");
-           var img = $("<img>");
+            var ebayResults = $("#ebayResults");
+            var newCard = $("<div>").addClass("card ebayResult");
+            
+            var newURLDiv = $("<a>").attr("href", link).text(title);
+            var newCharachterDiv = $("<div>").addClass("mainChar").attr("target", "top").attr("id", "title").text("Main Character: " + mainCharacter);
+            newCard.append(newURLDiv);
+            newCard.append(newCharachterDiv);
+
+            ebayResults.append(newCard);
            
-           p.attr("text", link);
-           h6.attr("text", title);
-        //    img.attr("src", imgUrl);
-           div.append(img);
-           div.append(h6);
-           div.append(p);
        }
     
         
