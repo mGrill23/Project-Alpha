@@ -21,30 +21,30 @@ $("#searchEbayBtn").on("click", function() {
         // response = response;
         console.log(response);
         var ebayResults = $("#ebayResults");
-       function domLoop(response) {
+        function domLoop(response) {
         for (var i = 0; i < response.Product.length; i++)  {
             var link = response.Product[i].DetailsURL;
             console.log(link);
             var title = response.Product[i].Title;
             console.log(title);
-             var mainCharacter = response.Product[i].ItemSpecifics.NameValueList[1].Value[0];
-             console.log("mainCharacter=" + mainCharacter);
+            var mainCharacter = response.Product[i].ItemSpecifics.NameValueList[1].Value[0];
+            console.log("mainCharacter=" + mainCharacter);
  
              
-             var newCard = $("<div>").addClass("card ebayResult");
+            var newCard = $("<div>").addClass("card ebayResult");
              
-             var newURLDiv = $("<a>").attr("href", link).text(title);
-             var newCharachterDiv = $("<div>").addClass("mainChar").attr("target", "top").attr("id", "title").text("Main Character: " + mainCharacter);
-             newCard.append(newURLDiv);
-             newCard.append(newCharachterDiv);
+            var newURLDiv = $("<a>").attr("href", link).text(title);
+            var newCharachterDiv = $("<div>").addClass("mainChar").attr("target", "top").attr("id", "title").text("Main Character: " + mainCharacter);
+            newCard.append(newURLDiv);
+            newCard.append(newCharachterDiv);
  
-             ebayResults.append(newCard);
+            ebayResults.append(newCard);
             
         }
        }
 
         if (ebayResults.children().length == 0) {
-            domloop(response);
+            domLoop(response);
         } else {
             ebayResults.empty();
             domLoop(response);
