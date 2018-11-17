@@ -43,12 +43,12 @@ $("#searchEbayBtn").on("click", function() {
         }
        }
 
-if (ebayResults.children().length == 0) {
-    domloop(response);
-} else {
-    ebayResults.empty();
-    domLoop(response);
-}
+        if (ebayResults.children().length == 0) {
+            domloop(response);
+        } else {
+            ebayResults.empty();
+            domLoop(response);
+        }
     
         
     
