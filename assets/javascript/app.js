@@ -43,10 +43,10 @@ $("#searchEbayBtn").on("click", function() {
         }
        }
 
-if (ebayResults == "") {
+if (ebayResults.children().length == 0) {
     domloop(response);
 } else {
-    ebayResults = "";
+    ebayResults.empty();
     domLoop(response);
 }
     

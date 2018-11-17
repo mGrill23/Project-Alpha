@@ -32,10 +32,10 @@ $("#searchBtn").on("click", function(event) {
                 }
             }
 
-            if (btnDropdown == "") {
+            if (btnDropdown.children().length == 0) {
                 marvelLoop(response);
             } else {
-                btnDropdown = "";
+                btnDropdown.empty();
                 marvelLoop(response);
             }
        })
