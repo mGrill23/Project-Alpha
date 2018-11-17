@@ -21,12 +21,22 @@ $("#searchBtn").on("click", function(event) {
        .then(function(response) {
             console.log(response);
             console.log("length=" + response.data.results.length);
-            for (var i=0; i < response.data.results.length;i++) {
-                console.log(response.data.results[i].title);
-                var btnDropdown = $("#menuOptions");
-        
-                var newOption = $("<option>").addClass("dropdown-item").attr("value", response.data.results[i].title).text(response.data.results[i].title);
-                btnDropdown.append(newOption);
+            var btnDropdown = $("#menuOptions");
+            function marvelLoop(response){
+                for (var i=0; i < response.data.results.length;i++) {
+                    console.log(response.data.results[i].title);
+                    
+            
+                    var newOption = $("<option>").addClass("dropdown-item").attr("value", response.data.results[i].title).text(response.data.results[i].title);
+                    btnDropdown.append(newOption);
+                }
+            }
+
+            if (btnDropdown == "") {
+                marvelLoop(response);
+            } else {
+                btnDropdown = "";
+                marvelLoop(response);
             }
        })
        

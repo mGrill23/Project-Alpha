@@ -19,26 +19,36 @@ $("#searchEbayBtn").on("click", function() {
         response = JSON.parse(response);
         
         // response = response;
-console.log(response);
-       for (var i = 0; i < response.Product.length; i++)  {
-           var link = response.Product[i].DetailsURL;
-           console.log(link);
-           var title = response.Product[i].Title;
-           console.log(title);
-            var mainCharacter = response.Product[i].ItemSpecifics.NameValueList[1].Value[0];
-            console.log("mainCharacter=" + mainCharacter);
-
-            var ebayResults = $("#ebayResults");
-            var newCard = $("<div>").addClass("card ebayResult");
+        console.log(response);
+        var ebayResults = $("#ebayResults");
+       function domLoop(response) {
+        for (var i = 0; i < response.Product.length; i++)  {
+            var link = response.Product[i].DetailsURL;
+            console.log(link);
+            var title = response.Product[i].Title;
+            console.log(title);
+             var mainCharacter = response.Product[i].ItemSpecifics.NameValueList[1].Value[0];
+             console.log("mainCharacter=" + mainCharacter);
+ 
+             
+             var newCard = $("<div>").addClass("card ebayResult");
+             
+             var newURLDiv = $("<a>").attr("href", link).text(title);
+             var newCharachterDiv = $("<div>").addClass("mainChar").attr("target", "top").attr("id", "title").text("Main Character: " + mainCharacter);
+             newCard.append(newURLDiv);
+             newCard.append(newCharachterDiv);
+ 
+             ebayResults.append(newCard);
             
-            var newURLDiv = $("<a>").attr("href", link).text(title);
-            var newCharachterDiv = $("<div>").addClass("mainChar").attr("target", "top").attr("id", "title").text("Main Character: " + mainCharacter);
-            newCard.append(newURLDiv);
-            newCard.append(newCharachterDiv);
-
-            ebayResults.append(newCard);
-           
+        }
        }
+
+if (ebayResults == "") {
+    domloop(response);
+} else {
+    ebayResults = "";
+    domLoop(response);
+}
     
         
     
